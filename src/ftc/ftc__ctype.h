@@ -10,11 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FTC_H
-# define FTC_H
+#ifndef FTC__CTYPE_H
+# define FTC__CTYPE_H
 
-# include "ftc__ctype.h"
-# include "ftc__stdlib.h"
-# include "ftc__string.h"
+int	ft_types_char_alnum(int c);
+int	ft_types_char_alpha(int c);
+int	ft_types_char_ascii(int c);
+int	ft_types_char_blank(int c);
+int	ft_types_char_cntrl(int c);
+int	ft_types_char_digit(int c);
+int	ft_types_char_graph(int c);
+int	ft_types_char_lower(int c);
+int	ft_types_char_print(int c);
+int	ft_types_char_punct(int c);
+int	ft_types_char_space(int c);
+int	ft_types_char_upper(int c);
+int	ft_types_char_xdigit(int c);
+int	ft_types_char_lower(int c);
+int	ft_types_char_upper(int c);
 
 #endif
