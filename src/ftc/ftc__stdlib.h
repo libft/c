@@ -25,6 +25,8 @@ int		ftc__rand(void);
 int		ftc__rand_r(unsigned int *seed);
 
 void	ftc__exit(int status);
-int		ftc__atexit(int status);
+int		ftc__atexit(void (*function)(void));
+void	ftc__quick_exit(int status);
+int		ftc__at_quick_exit(void (*function)(void));
 
 #endif

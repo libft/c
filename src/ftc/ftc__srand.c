@@ -16,5 +16,5 @@
 
 void	ftc__srand(unsigned int seed)
 {
-	g()->ftc.rand_seed = seed;
+	g()->ftc.rand.seed = seed;
 }
