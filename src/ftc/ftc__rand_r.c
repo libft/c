@@ -10,21 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FTC__STDLIB_H
-# define FTC__STDLIB_H
+#include "ftc__stdlib.h"
 
-# include <stddef.h>
-
-void	*ftc__malloc(size_t size);
-void	*ftc__calloc(size_t count, size_t size);
-void	*ftc__realloc(void *ptr, size_t size);
-void	ftc__free(void *ptr);
-
-void	ftc__srand(unsigned int seed);
-int		ftc__rand(void);
-int		ftc__rand_r(unsigned int *seed);
-
-void	ftc__exit(int status);
-int		ftc__atexit(int status);
-
-#endif
+int	ftc__rand_r(unsigned int *seed)
+{
+	*seed = *seed * 1103515245 + 12345;
+	return ((unsigned int)(*seed / 65536) % 32768);
+}
