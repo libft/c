@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FTW_H
-# define FTW_H
+#ifndef FTC__ASSERT_H
+# define FTC__ASSERT_H
 
-# include "ftw__signal.h"
-# include "ftw__stdlib.h"
+void	ftc__assert(int condition);
 
 #endif

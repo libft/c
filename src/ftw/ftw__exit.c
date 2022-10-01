@@ -12,9 +12,24 @@
 
 #include "ftw__stdlib.h"
 
-#include <stdlib.h>
+#ifdef FTW_ALLOWED_FUNCTIONS_EXIT
+
+# include <stdlib.h>
 
 void	ftw__exit(int status)
 {
 	exit(status);
 }
+
+#else
+
+// TODO: print status
+
+void	ftw__exit(int status)
+{
+	(void)status;
+	while (1)
+		;
+}
+
+#endif

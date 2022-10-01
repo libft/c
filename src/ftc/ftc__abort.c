@@ -10,10 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FTW_H
-# define FTW_H
+#include "ftc__stdlib.h"
 
-# include "ftw__signal.h"
-# include "ftw__stdlib.h"
+#include <signal.h>
+#include <stdlib.h>
 
-#endif
+#include "ftw__signal.h"
+
+void	ftc__abort(void)
+{
+	if (ftw__raise(SIGABRT) != 0)
+		ftc__exit(EXIT_FAILURE);
+	while (1)
+		;
+}

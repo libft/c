@@ -10,10 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FTW_H
-# define FTW_H
+#include "ftw__signal.h"
 
-# include "ftw__signal.h"
-# include "ftw__stdlib.h"
+#ifdef FTW_ALLOWED_FUNCTIONS_RAISE
+
+# include <signal.h>
+
+int	ftw__raise(int sig)
+{
+	return (raise(sig));
+}
+
+#else
+
+int	ftw__raise(int sig)
+{
+	(void)sig;
+	return (-1);
+}
 
 #endif

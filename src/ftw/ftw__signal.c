@@ -10,10 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FTW_H
-# define FTW_H
+#include "ftw__signal.h"
 
-# include "ftw__signal.h"
-# include "ftw__stdlib.h"
+#include <signal.h>
+
+#ifdef FTW_ALLOWED_FUNCTIONS_SIGNAL
+
+t_ftw__signal_handler	ftw__signal(int sig, t_ftw__signal_handler handler)
+{
+	return (signal(sig, handler));
+}
+
+#else
+
+t_ftw__signal_handler	ftw__signal(int sig, t_ftw__signal_handler handler)
+{
+	(void)sig;
+	(void)handler;
+	return (SIG_ERR);
+}
 
 #endif
