@@ -13,6 +13,7 @@
 #ifndef FTC_H
 # define FTC_H
 
+# include "ftc__assert.h"
 # include "ftc__ctype.h"
 # include "ftc__stdlib.h"
 # include "ftc__string.h"
