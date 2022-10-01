@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ftw__internal_allow.h"
+
 #include "ftw__signal.h"
 
 #ifdef FTW_ALLOWED_FUNCTIONS_RAISE

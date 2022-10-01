@@ -10,26 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftw__internal_allow.h"
+#ifndef FTW__INTERNAL_ALLOW_H
+# define FTW__INTERNAL_ALLOW_H
 
-#include "ftw__signal.h"
-
-#include <signal.h>
-
-#ifdef FTW_ALLOWED_FUNCTIONS_SIGNAL
-
-t_ftw__signal_handler	ftw__signal(int sig, t_ftw__signal_handler handler)
-{
-	return (signal(sig, handler));
-}
-
-#else
-
-t_ftw__signal_handler	ftw__signal(int sig, t_ftw__signal_handler handler)
-{
-	(void)sig;
-	(void)handler;
-	return (SIG_ERR);
-}
+# ifdef FTW_ALLOWED_ALL
+#  define FTW_ALLOWED_FUNCTIONS_EXIT
+#  define FTW_ALLOWED_FUNCTIONS_RAISE
+#  define FTW_ALLOWED_FUNCTIONS_SIGNAL
+# endif
 
 #endif
