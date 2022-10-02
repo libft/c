@@ -17,11 +17,11 @@
 
 void	ftc__exit(int status)
 {
-	while (ftw__g()->ftc.quick_exit.bonus_handler_count)
-		ftw__g()->ftc.quick_exit.bonus_handler[
-		--ftw__g()->ftc.quick_exit.bonus_handler_count]();
-	while (ftw__g()->ftc.quick_exit.mandatory_handler_count)
-		ftw__g()->ftc.quick_exit.mandatory_handler[
-		--ftw__g()->ftc.quick_exit.mandatory_handler_count]();
+	while (ftw__g()->quick_exit.bonus_handler_count)
+		ftw__g()->quick_exit.bonus_handler[
+		--ftw__g()->quick_exit.bonus_handler_count]();
+	while (ftw__g()->quick_exit.mandatory_handler_count)
+		ftw__g()->quick_exit.mandatory_handler[
+		--ftw__g()->quick_exit.mandatory_handler_count]();
 	ftw__exit(status);
 }

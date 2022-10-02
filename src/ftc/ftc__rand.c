@@ -16,5 +16,5 @@
 
 int	ftc__rand(void)
 {
-	return (ftc__rand_r(&ftw__g()->ftc.rand.seed));
+	return (ftc__rand_r(&ftw__g()->rand.seed));
 }
