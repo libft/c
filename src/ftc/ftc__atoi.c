@@ -10,26 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FTC__STDLIB_H
-# define FTC__STDLIB_H
+#include "ftc__stdlib.h"
 
-# include <stddef.h>
+int	ftc__atoi(const char *str)
+{
+	int	sgn;
+	int	result;
 
-void	*ftc__malloc(size_t size);
-void	*ftc__calloc(size_t count, size_t size);
-void	*ftc__realloc(void *ptr, size_t size);
-void	ftc__free(void *ptr);
-
-void	ftc__srand(unsigned int seed);
-int		ftc__rand(void);
-int		ftc__rand_r(unsigned int *seed);
-
-void	ftc__abort(void);
-void	ftc__exit(int status);
-int		ftc__atexit(void (*function)(void));
-void	ftc__quick_exit(int status);
-int		ftc__at_quick_exit(void (*function)(void));
-
-int		ftc__atoi(const char *str);
-
-#endif
+	result = 0;
+	sgn = 1;
+	while (*str == '\t' || *str == '\n' || *str == '\v'
+		|| *str == '\f' || *str == '\r' || *str == ' ')
+		str++;
+	if (*str == '-')
+	{
+		str++;
+		sgn = -1;
+	}
+	else if (*str == '+')
+		str++;
+	while ('0' <= *str && *str <= '9')
+		result = result * 10 + (*str++ - '0') * sgn;
+	return (result);
+}
