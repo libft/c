@@ -36,15 +36,6 @@ typedef struct s_ftc__internal_global
 	t_ftc__internal_global_exit	quick_exit;
 }	t_ftc__internal_global;
 
-# ifndef FT_G_DEFINED
-
-typedef struct s_ft_g
-{
-	t_ftc__internal_global	ftc;
-}	t_ft_g;
-
-# endif
-
-extern t_ft_g	*g(void);
+extern t_ftc__internal_global	*ftw__g(void);
 
 #endif
