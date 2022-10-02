@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftw__internal_allow.h"
+#include "ftw__internal_prelude.h"
 
 #include "ftw__signal.h"
 
