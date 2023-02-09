@@ -15,7 +15,8 @@
 
 # include <stddef.h>
 
-typedef struct s_memory_block {
+typedef struct s_memory_block
+{
 	size_t	capacity;
 	size_t	size;
 	char	actual[];
