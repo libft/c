@@ -38,7 +38,7 @@ static bool	increase_handler_array(void)
 	return (false);
 }
 
-int	ftc__atexit(void (*function)(void))
+int	ftc__at_quick_exit(void (*function)(void))
 {
 	if (ftw__g()->quick_exit.mandatory_handler_count != 32)
 	{
